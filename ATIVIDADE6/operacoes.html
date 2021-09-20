@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lan="pt-br">
+   
+    <head>
+        <meta charset="UTF-8">
+        <title>Atividade 6 - Media</title>
+    </head>
+
+    <body>
+
+        <script>
+            
+            var soma = function(a, b) {
+                return a + b;
+            }
+            
+            var subtracao = function(a, b) {
+                return (a - b);
+            }
+            
+            var multiplicacao = function(a, b) {
+                return (a * b);
+            }
+            
+            var divisao = function(a, b) {
+                return (a / b);
+            }
+            
+            var resto = function(a, b) {
+                return (a % b);
+            }
+            
+            var valor1;
+            var valor2;
+            
+            valor1 = parseFloat(prompt("Digite o primeiro numero"));
+            valor2 = parseFloat(prompt("Digite o segundo numero"));
+            
+            alert("Soma: " + soma(valor1, valor2));
+            alert("Subtração: " + subtracao(valor1, valor2));
+            alert("Multiplicação: " + multiplicacao(valor1, valor2));
+                  
+            if (valor2 == 0){
+                alert("Não existe divisão pro ZERO");
+            } else{
+                alert("Divisão: " + divisao(valor1, valor2));
+            }
+            
+            if (valor2 == 0){
+                alert("Não existe divisão pro ZERO");
+            } else{
+                alert("Resto: " + resto(valor1, valor2));
+            }
+        </script>
+
+    </body>
+
+</html>
