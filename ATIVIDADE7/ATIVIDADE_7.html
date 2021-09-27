@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lan="pt-br">
+   
+    <head>
+        <meta charset="UTF-8">
+        <title>Atividade 7 - Jogo</title>
+    </head>
+
+    <body>
+       
+        <script>
+
+            var escolha;
+            var numero = Math.floor(Math.random() * 3) + 1;
+            var resultado;
+        
+            escolha = prompt("Escolha: 1 - Pedra, 2 - Papel, 3 - Tesoura");
+            
+            if (escolha == numero){
+                resultado = "Empate";
+            }            
+            else if (escolha == 1 && numero == 3){
+                resultado = "Parabéns! Você venceu!";
+            }
+            else if (escolha == 2 && numero == 1){
+                resultado = "Parabéns! Você venceu!";
+            }
+            else if (escolha == 3 && numero == 2){
+                resultado = "Parabéns! Você venceu!";
+            }
+            else {
+                resultado = "Você perdeu!";
+            }
+            
+            if (escolha == 1){
+                if (numero == 1){
+                    alert("Escolha do Usuário: Pedra. \nEscolha do Computador: Pedra. \nResultado: " + resultado);
+                }
+                else if (numero == 2){
+                    alert("Escolha do Usuário: Pedra. \nEscolha do Computador: Papel. \nResultado: " + resultado);
+                }
+                else if (numero == 3){
+                    alert("Escolha do Usuário: Pedra. \nEscolha do Computador: Tesoura. \nResultado: " + resultado);
+                }
+            }
+            else if (escolha == 2){
+                if (numero == 1){
+                    alert("Escolha do Usuário: Papel. \nEscolha do Computador: Pedra. \nResultado: " + resultado);
+                }
+                else if (numero == 2){
+                    alert("Escolha do Usuário: Papel. \nEscolha do Computador: Papel. \nResultado: " + resultado);
+                }
+                else if (numero == 3){
+                    alert("Escolha do Usuário: Papel. \nEscolha do Computador: Tesoura. \nResultado: " + resultado);
+                }
+            }
+            else if (escolha == 3){
+                if (numero == 1){
+                    alert("Escolha do Usuário: Tesoura. \nEscolha do Computador: Pedra. \nResultado: " + resultado);
+                }
+                else if (numero == 2){
+                    alert("Escolha do Usuário: Tesoura. \nEscolha do Computador: Papel. \nResultado: " + resultado);
+                }
+                else if (numero == 3){
+                    alert("Escolha do Usuário: Tesoura. \nEscolha do Computador: Tesoura. \nResultado: " + resultado);
+                }
+            }
+            else {
+                alert("Escolha Inválida");
+            }
+        </script>
+
+    </body>
+
+</html>
