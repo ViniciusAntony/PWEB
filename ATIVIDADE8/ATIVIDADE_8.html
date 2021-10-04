@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lan="pt-br">
+   
+    <head>
+        <meta charset="UTF-8">
+        <title>Atividade 8 - Pesquisa</title>
+    </head>
+
+    <body>
+       
+        <script>
+
+            var idade = 0, sexo, opiniao;
+            var contador = 0, soma_idade = 0, media_idade = 0, maior_idade = 0, menor_idade = 100, cont_pessimo = 0, cont_ruim = 0, cont_bom = 0, cont_otimo = 0, taxa_filme = 0, homem = 0, mulher = 0, total = 0;
+            var escolha, quantidade;
+        
+            var func_idade = function(a){
+                if (a > maior_idade){
+                    maior_idade = a;
+                }
+                if (a < menor_idade){
+                    menor_idade = a;
+                }
+                
+                soma_idade = soma_idade + a; 
+            }
+            
+            var func_sexo = function(a){
+                if (a == 1){
+                    homem = homem + 1;
+                    sexo = "Masculino";
+                }
+                else if (a == 2){
+                    mulher = mulher + 1;
+                    sexo = "Feminino";
+                }
+            }
+            
+            var func_opiniao = function(a){
+                if (a == 1){
+                    cont_pessimo = cont_pessimo + 1;
+                    opiniao = "Péssimo";
+                }
+                else if (a == 2){
+                    cont_ruim = cont_ruim + 1;
+                    opiniao = "Ruim";
+                }
+                else if (a == 3){
+                    cont_bom = cont_bom + 1;
+                    opiniao = "Bom";
+                }
+                else if (a == 4){
+                    cont_otimo = cont_otimo + 1;
+                    opiniao = "Ótimo";
+                }
+            }
+            
+            do{
+            escolha = parseFloat(prompt("1 - Preenchimento Manual || 2 - Preenchimento Automatico \nDigite sua Escolha: "));
+            }while(escolha < 1 || escolha > 2);
+            
+            if (escolha == 1){
+                quantidade = parseFloat(prompt("Digite a quantidade de Cadastros: "));
+                
+                do{do{
+                idade = parseFloat(prompt("Digite sua Idade: "));
+                }while(idade < 1 || idade > 100);
+                    func_idade(idade);
+
+                do{
+                sexo = parseFloat(prompt("1 - Masculino || 2 - Feminino \nDigite seu Sexo: "));
+                }while(sexo < 1 || sexo > 2);
+                    func_sexo(sexo);
+
+                do{
+                opiniao = parseFloat(prompt("1 - Péssimo || 2 - Ruim || 3 - Bom || 4 - Ótimo \nDê sua Opinião: "));
+                }while(opiniao < 1 || opiniao > 4);
+                    func_opiniao(opiniao);
+
+                alert("Pesquisa Salva!" +
+                    "\nIdade: " + idade +
+                    "\nSexo: " + sexo +
+                    "\nOpinião: " + opiniao);
+
+                contador = contador + 1;
+                }while(contador < quantidade);
+            }
+            else if (escolha == 2){
+                quantidade = parseFloat(prompt("Digite a quantidade de Cadastros: "));
+                
+                do{
+                idade = Math.floor(Math.random() * 99) + 1;
+                    func_idade(idade);
+
+                sexo = Math.floor(Math.random() * 2) + 1;
+                    func_sexo(sexo);
+
+                opiniao = Math.floor(Math.random() * 4) + 1;
+                    func_opiniao(opiniao);
+                    
+                alert("Pesquisa Salva!" +
+                    "\nIdade: " + idade +
+                    "\nSexo: " + sexo +
+                    "\nOpinião: " + opiniao);
+
+                contador = contador + 1;
+                }while(contador < quantidade);    
+            }
+            
+            total = homem + mulher;
+            media_idade = soma_idade / contador;
+            taxa_filme = ((cont_bom + cont_otimo) / contador) * 100;
+            
+            alert("Exibindo Resultados: " +
+                   "\n - Idade da Pessoa mais Velha: " + maior_idade +
+                   "\n - Idade da Pessoa mais Nova: " + menor_idade +
+                   "\n - Média das Idades: " + media_idade +
+                   "\n - Total de Homens: " + homem +
+                   "\n - Total de Mulheres: " + mulher +
+                   "\n - Total de Pessoas: " + total +
+                   "\n\nQualidade do Filme" +
+                   "\n - Péssimo: " + cont_pessimo +
+                   "\n - Ruim: " + cont_ruim +
+                   "\n - Bom: " + cont_bom +
+                   "\n - Otimo: " + cont_otimo +
+                   "\n - Taxa de Avaliação Positiva: " + taxa_filme + "%");
+            
+        </script>
+
+    </body>
+
+</html>
